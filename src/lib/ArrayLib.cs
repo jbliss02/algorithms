@@ -28,8 +28,7 @@ namespace lib
 
                     var sequenceLength = end - start + 1;
 
-                    if (sequenceLength > longestSequence)
-                        longestSequence = sequenceLength;
+                    longestSequence = this.SetLongestSequence(longestSequence, sequenceLength);
                 }
             }   
 
@@ -42,6 +41,11 @@ namespace lib
             }
 
             return longestSequence;
+        }
+
+        private int SetLongestSequence(int longestSequence, int sequenceLength)
+        {
+            return sequenceLength > longestSequence ? sequenceLength : longestSequence;
         }
     }
 }

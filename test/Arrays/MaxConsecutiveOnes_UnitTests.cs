@@ -101,5 +101,20 @@ namespace test.Arrays
             int result = new ArrayLib().Max_Consecutive_Ones(A);
             Assert.Equal(0, result);
         }
+
+        [Fact]
+        public void EdgeTest_LongArray()
+        {
+            var A = new int[10000];
+
+            int sequence = 45;
+            for (int i = 1863; i < 1863 + sequence; i++)
+            {
+                A[i] = 1;
+            }
+
+            int result = new ArrayLib().Max_Consecutive_Ones(A);
+            Assert.Equal(sequence, result);
+        }
     }
 }
