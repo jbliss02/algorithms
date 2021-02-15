@@ -9,7 +9,6 @@ namespace lib
         /// </summary>
         public int Max_Consecutive_Ones(int[] A)
         {          
-
             bool inSequence = false;
             int longestSequence = 0;
             int start = 0;
