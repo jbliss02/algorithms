@@ -29,10 +29,18 @@ namespace lib
 
                     var sequenceLength = end - start + 1;
 
-                    if (sequenceLength> longestSequence)
+                    if (sequenceLength > longestSequence)
                         longestSequence = sequenceLength;
                 }
             }   
+
+            if (inSequence)
+            {
+                var sequenceLength = A.Length - start;
+
+                if (sequenceLength > longestSequence)
+                    longestSequence = sequenceLength;
+            }
 
             return longestSequence;
         }
