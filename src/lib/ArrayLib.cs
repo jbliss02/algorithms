@@ -7,7 +7,50 @@ namespace lib
         /// <summary>
         /// https://leetcode.com/explore/learn/card/fun-with-arrays/521/introduction/3238/
         /// </summary>
-        public int Max_Consecutive_Ones(int[] A)
+        /// 
+        public int Max_Consecutive_Ones(int[] nums)
+        { 
+            int run = 0;
+            int max = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 1)
+                {
+                    run++;
+                }
+                else
+                {
+                    if (run > max)
+                        max = run;
+
+                    run = 0;
+                }
+            }
+
+            return run > max ? run : max;
+        }
+        public int Max_Consecutive_Ones_Better(int[] nums)
+        { 
+            int run = 0;
+            int max = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 1)
+                {
+                    run++;
+                }
+                else
+                {
+                    max = run > max ? run : max;
+                    run = 0;
+                }
+            }
+
+            return run > max ? run : max;
+        }
+        public int Max_Consecutive_Ones_Slow(int[] A)
         {          
             bool inSequence = false;
             int longestSequence = 0;
