@@ -79,5 +79,22 @@ namespace test.Arrays
             var expected = new int[9] { 2, 4, 6, 21, 23, 25, 39, 412, 515 };
             Assert.Equal(expected, nums1);
         }
+
+        [Fact]
+        public void EdgeTest_SomeEqualNumbers()
+        {
+            //Given
+            var nums1 = new int[9] { 1, 2, 6, 39, 412, 515, 0, 0, 0 };
+            var nums2 = new int[3] { 2, 4, 6 };
+            var m = 6;
+            var n = 3;
+            
+            //When
+            new MergeSortedArrays().Go(nums1, m, nums2, n);
+
+            //Then
+            var expected = new int[9] { 1, 2, 2, 4, 6, 6, 39, 412, 515 };
+            Assert.Equal(expected, nums1);
+        }
     }
 }
