@@ -9,7 +9,21 @@ namespace lib.Arrays
     {
         public int Go(int[] nums)
         {
+            int removed = 0;
 
+            for (int i = nums.Length - 1 - removed; i > 0; i--)
+            {
+                if (nums[i] == nums[i - 1])
+                {
+                    for (int j = i; j < nums.Length - removed - 1; j++)
+                    {
+                        nums[j] = nums[j + 1];
+                    }
+                    removed++;
+                }
+            }
+
+            return nums.Length - removed;
         }
     }
 }

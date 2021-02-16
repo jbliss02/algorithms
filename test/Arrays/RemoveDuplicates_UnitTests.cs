@@ -24,6 +24,7 @@ namespace test.Arrays
             Assert.Equal(nums[1], 2); 
         }
 
+        [Fact]
         public void SimpleTest_MultipleRemoval()
         {
             //Given
