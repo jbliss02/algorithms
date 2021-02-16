@@ -35,7 +35,7 @@ namespace test.Arrays
         public void SimpleTest_SimplestMountain()
         {
             //Given
-            var nums = new int[3] { 1, 2, 3 };
+            var nums = new int[3] { 1, 2, 1 };
 
             //When
             var result = new MountainCheck().ValidMountainArray(nums);
@@ -158,6 +158,48 @@ namespace test.Arrays
             var result = new MountainCheck().ValidMountainArray(nums);
 
             //Then
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void SimpleTest_DippedPeak()
+        {
+            //Given
+
+            var nums = new int[3] { 2, 0, 2 };
+
+            //When
+            var result = new MountainCheck().ValidMountainArray(nums);
+
+            //Then
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void SimpleTest_ConsecutiveNumbers()
+        {
+            //Given
+            
+            var nums = new int[10] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            //When
+            var result = new MountainCheck().ValidMountainArray(nums);
+
+            //Then
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void SimpleTest_ConsecutiveNumbersDescending()
+        {
+            //Given
+            
+            var nums = new int[10] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+
+            //When
+            var result = new MountainCheck().ValidMountainArray(nums);
+
+            //ThenKs
             Assert.False(result);
         }
     }
