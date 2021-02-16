@@ -8,11 +8,13 @@ namespace console
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Max_Consecutive_Ones();
         }
 
         static void Max_Consecutive_Ones()
         {
-            int[] test_1 = new int[5] { 1, 0, 1, 1, 1 };
+            var A = new int[7] { 1, 1, 1, 1, 0, 1, 1 };
+            int result = new ArrayLib().Max_Consecutive_Ones(A);
         }
     }
 }
