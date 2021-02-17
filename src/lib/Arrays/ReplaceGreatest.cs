@@ -5,7 +5,30 @@ namespace lib.Arrays
     /// </summary>
     public class ReplaceGreatest
     {        
-        public int[] ReplaceElements(int[] arr) 
+        public int[] ReplaceElements(int [] arr)
+        {
+            if (arr.Length == 0)
+            {
+                return arr;
+            }
+
+            int max = arr[arr.Length - 1];
+
+            for (int i = arr.Length - 2; i >= 0; i--)
+            {
+                if (max < arr[i])
+                {
+                    max = arr[i];
+                }
+
+                arr[i] = max;         
+            }    
+
+            arr[arr.Length - 1] = -1;        
+
+            return arr;
+        }
+        public int[] ReplaceElements_DoubleLoop(int[] arr) 
         {
             if (arr.Length == 0)
             {
