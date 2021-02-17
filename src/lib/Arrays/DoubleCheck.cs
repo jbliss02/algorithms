@@ -15,7 +15,7 @@ namespace lib.Arrays
 
             for(int i = 0; i < n; i++)
             {
-                if(hash.Contains(arr[i]*2) || (hash.Contains(arr[i]/2) && arr[i]%2 ==0))
+                if(hash.Contains(arr[i] * 2) || (hash.Contains(arr[i] / 2) && arr[i] % 2 == 0))
                 {
                     return true;
                 }
